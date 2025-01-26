@@ -1,4 +1,5 @@
-#for this task, I will attempt to solve the problem on the slides.
+#for this task, I will attempt to solve the problem on the slides (slide 26 from session 5 and 6).
+
 
 print("Welcome to our online calculator, where we will help you calculate your net income.")
 print("by using the calculator you will be agreeing to our terms and services.")
@@ -19,6 +20,36 @@ try:
         eligible = False
     if eligible:
         print("ok, we can proceed")
+        try:
+            income = input(f"Ok, {name}. What is your gross income?")
+            income = int(income)
+            while income < 0:
+                print("value is not accepted", end= "")
+            income = input("please reenter a proper vale")
+            income = int(income)
+
+            while income > 10000000:
+                print("value is not accepted", end="")
+            income = input("please reenter a proper vale")
+            income = int(income)
+
+            offsprings = input("How many kids do you have?")
+            offsprings = int(offsprings)
+            while offsprings < 0:
+                print("value is not accepted", end="")
+                offsprings = input("please reenter a proper vale")
+                offsprings = int(offsprings)
+            while offsprings > 5:
+                print("value is not accepted", end="")
+                offsprings = input("please reenter a proper vale")
+                offsprings = int(offsprings)
+
+
+
+
+
+
+
     else:
         print("sorry you can't use our calculator")
 
