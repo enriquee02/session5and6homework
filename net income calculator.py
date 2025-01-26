@@ -44,6 +44,8 @@ try:
                 offsprings = input("please reenter a proper vale")
                 offsprings = int(offsprings)
 
+#after we defined what our users should realistically input as values we can build the calculator
+
 
 
 
