@@ -1,10 +1,8 @@
 #for this task, I will attempt to solve the problem on the slides (slide 26 from session 5 and 6).
-
-
 print("Welcome to our online calculator, where we will help you calculate your net income.")
-print("by using the calculator you will be agreeing to our terms and services.")
+print("by using the calculator you are agreeing to our terms and services.")
 
-name = input("How should we call you?")
+name = input("Dear customer, how should we call you?")
 try:
     age = input(f"{name}, please enter your age as a numerical value")
     age = int(age)
@@ -18,30 +16,31 @@ try:
 
     else:
         eligible = False
+
     if eligible:
-        print("ok, we can proceed")
+        print(f"Thank you {name}, we can proceed.", end = "")
         try:
-            income = input(f"Ok, {name}. What is your gross income?")
+            income = input(" What is your gross income?")
             income = int(income)
             while income < 0:
                 print("value is not accepted", end= "")
-            income = input("please reenter a proper vale")
-            income = int(income)
+                income = input(" please reenter a proper value.")
+                income = int(income)
 
             while income > 10000000:
                 print("value is not accepted", end="")
-            income = input("please reenter a proper vale")
-            income = int(income)
+                income = input(" please reenter a proper value.")
+                income = int(income)
 
             offsprings = input("How many kids do you have?")
             offsprings = int(offsprings)
             while offsprings < 0:
                 print("value is not accepted", end="")
-                offsprings = input("please reenter a proper vale")
+                offsprings = input(" please reenter a proper value.")
                 offsprings = int(offsprings)
             while offsprings > 5:
                 print("value is not accepted", end="")
-                offsprings = input("please reenter a proper vale")
+                offsprings = input(" please reenter a proper value.")
                 offsprings = int(offsprings)
 
 #after we defined what our users should realistically input as values we can build the calculator
@@ -54,13 +53,15 @@ try:
             else:
                 inc_tax = 0.18-(offsprings * 0.005)
 
+            net_income = income * (1 - inc_tax)
+            print(f"{name}, according to our calculator, your net income would be {net_income}.")
+            print("Thank you so much for using our services.")
 
-
-
+        except ValueError:
+            print("please enter a valid value")
 
     else:
         print("sorry you can't use our calculator")
 
 except ValueError:
     print("please enter a valid age")
-
