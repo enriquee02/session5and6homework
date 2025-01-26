@@ -45,8 +45,14 @@ try:
                 offsprings = int(offsprings)
 
 #after we defined what our users should realistically input as values we can build the calculator
-
-
+            if income < 1000:
+                inc_tax = 0.1-(offsprings * 0.01)
+            elif income < 2000:
+                inc_tax = 0.12-(offsprings * 0.01)
+            elif income < 4000:
+                inc_tax = 0.14-(offsprings * 0.005)
+            else:
+                inc_tax = 0.18-(offsprings * 0.005)
 
 
 
